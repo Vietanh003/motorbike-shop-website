@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CHXMDBModelStoreContainer" CdmEntityContainer="CHXMDBEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="CHXMDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaiDats">
+      <EntityTypeMapping TypeName="CHXMDBModel.CaiDat">
+        <MappingFragment StoreEntitySet="CaiDats">
+          <ScalarProperty Name="settingkey" ColumnName="settingkey" />
+          <ScalarProperty Name="settingvalue" ColumnName="settingvalue" />
+          <ScalarProperty Name="settingmota" ColumnName="settingmota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChiTietDonHangs">
+      <EntityTypeMapping TypeName="CHXMDBModel.ChiTietDonHang">
+        <MappingFragment StoreEntitySet="ChiTietDonHangs">
+          <ScalarProperty Name="Idchitiet" ColumnName="Idchitiet" />
+          <ScalarProperty Name="Maxe" ColumnName="Maxe" />
+          <ScalarProperty Name="Gia" ColumnName="Gia" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="DonHang_Id" ColumnName="DonHang_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dangkies">
+      <EntityTypeMapping TypeName="CHXMDBModel.Dangky">
+        <MappingFragment StoreEntitySet="Dangkies">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucs">
+      <EntityTypeMapping TypeName="CHXMDBModel.DanhMuc">
+        <MappingFragment StoreEntitySet="DanhMucs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="seotieude" ColumnName="seotieude" />
+          <ScalarProperty Name="seomota" ColumnName="seomota" />
+          <ScalarProperty Name="seotukhoa" ColumnName="seotukhoa" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhMucSanPhams">
+      <EntityTypeMapping TypeName="CHXMDBModel.DanhMucSanPham">
+        <MappingFragment StoreEntitySet="DanhMucSanPhams">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="seotieude" ColumnName="seotieude" />
+          <ScalarProperty Name="seomota" ColumnName="seomota" />
+          <ScalarProperty Name="seotukhoa" ColumnName="seotukhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonHangs">
+      <EntityTypeMapping TypeName="CHXMDBModel.DonHang">
+        <MappingFragment StoreEntitySet="DonHangs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="tenkhachhang" ColumnName="tenkhachhang" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImageXes">
+      <EntityTypeMapping TypeName="CHXMDBModel.ImageX">
+        <MappingFragment StoreEntitySet="ImageXes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idsanpham" ColumnName="idsanpham" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="isdefault" ColumnName="isdefault" />
+          <ScalarProperty Name="Xemay_Maxe" ColumnName="Xemay_Maxe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LienHes">
+      <EntityTypeMapping TypeName="CHXMDBModel.LienHe">
+        <MappingFragment StoreEntitySet="LienHes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="isread" ColumnName="isread" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="DanhMuc_Id" ColumnName="DanhMuc_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanHieux">
+      <EntityTypeMapping TypeName="CHXMDBModel.NhanHieu">
+        <MappingFragment StoreEntitySet="NhanHieux">
+          <ScalarProperty Name="manhanhieu" ColumnName="manhanhieu" />
+          <ScalarProperty Name="tennhanhieu" ColumnName="tennhanhieu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="CHXMDBModel.Post">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="Iddanhmuc" ColumnName="Iddanhmuc" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="seotieude" ColumnName="seotieude" />
+          <ScalarProperty Name="seomota" ColumnName="seomota" />
+          <ScalarProperty Name="seotukhoa" ColumnName="seotukhoa" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="DanhMuc_Id" ColumnName="DanhMuc_Id" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuangCaos">
+      <EntityTypeMapping TypeName="CHXMDBModel.QuangCao">
+        <MappingFragment StoreEntitySet="QuangCaos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TinTucs">
+      <EntityTypeMapping TypeName="CHXMDBModel.TinTuc">
+        <MappingFragment StoreEntitySet="TinTucs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="Iddanhmuc" ColumnName="Iddanhmuc" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="seotieude" ColumnName="seotieude" />
+          <ScalarProperty Name="seomota" ColumnName="seomota" />
+          <ScalarProperty Name="seotukhoa" ColumnName="seotukhoa" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="DanhMuc_Id" ColumnName="DanhMuc_Id" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XeMays">
+      <EntityTypeMapping TypeName="CHXMDBModel.XeMay">
+        <MappingFragment StoreEntitySet="XeMays">
+          <ScalarProperty Name="Maxe" ColumnName="Maxe" />
+          <ScalarProperty Name="Tenxe" ColumnName="Tenxe" />
+          <ScalarProperty Name="Giaxe" ColumnName="Giaxe" />
+          <ScalarProperty Name="Giasale" ColumnName="Giasale" />
+          <ScalarProperty Name="mota" ColumnName="mota" />
+          <ScalarProperty Name="chitiet" ColumnName="chitiet" />
+          <ScalarProperty Name="anh" ColumnName="anh" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="Iddanhmuc" ColumnName="Iddanhmuc" />
+          <ScalarProperty Name="maxuatxu" ColumnName="maxuatxu" />
+          <ScalarProperty Name="manhanhieu" ColumnName="manhanhieu" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+          <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+          <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+          <ScalarProperty Name="DanhMucSanPham_Id" ColumnName="DanhMucSanPham_Id" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="IsHome" ColumnName="IsHome" />
+          <ScalarProperty Name="IsSale" ColumnName="IsSale" />
+          <ScalarProperty Name="IsFeature" ColumnName="IsFeature" />
+          <ScalarProperty Name="IsHot" ColumnName="IsHot" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="seotieude" ColumnName="seotieude" />
+          <ScalarProperty Name="seomota" ColumnName="seomota" />
+          <ScalarProperty Name="seotukhoa" ColumnName="seotukhoa" />
+          <ScalarProperty Name="Codesanpham" ColumnName="Codesanpham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XuatXus">
+      <EntityTypeMapping TypeName="CHXMDBModel.XuatXu">
+        <MappingFragment StoreEntitySet="XuatXus">
+          <ScalarProperty Name="maxuatxu" ColumnName="maxuatxu" />
+          <ScalarProperty Name="tenxuatxu" ColumnName="tenxuatxu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

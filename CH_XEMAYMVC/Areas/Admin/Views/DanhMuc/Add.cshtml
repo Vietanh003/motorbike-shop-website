@@ -1,0 +1,102 @@
+﻿@model CuaHangXeMay_Web.Models.DanhMuc
+@{
+    ViewBag.Title = "Thêm Mới Danh Mục";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@section naviheader {
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/Home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/DanhMuc" class="nav-link">Danh Mục</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/DanhMuc/Add" class="nav-link">Thêm Mới</a>
+        </li>
+    </ul>
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Thêm Mới Danh Mục</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/Admin/DanhMuc">Danh Mục</a></li>
+                    <li class="breadcrumb-item active">Thêm Mới</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông Tin Thêm Mới Danh Mục</h3>
+
+            
+                        </div>
+        <div class="card-body p-0">
+           
+                <div class="bs-stepper-content">
+
+                    @using (Html.BeginForm("Add","DanhMuc",FormMethod.Post,new{ }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                                            <!-- your steps content here -->
+                    <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Tên Danh Mục</label>
+                            @Html.TextBoxFor(x => x.Tieude, new { @class="form-control", @placeholder= "Ten danh muc"})
+                            @Html.ValidationMessageFor(x => x.Tieude, null, new { @class="text-danger"})
+                     
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Mô Tả</label>
+                          @Html.TextAreaFor(x=>x.mota, new {@class= "form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Thứ Tự</label>
+                            @Html.TextBoxFor(x => x.position, new { @class = "form-control", @Value = "1" })
+                
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Seo title</label>
+                            @Html.TextAreaFor(x => x.seotieude, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Seo Mô Tả</label>
+                            @Html.TextAreaFor(x => x.seotukhoa, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Seo KeyWork</label>
+                            @Html.TextAreaFor(x => x.seomota, new { @class = "form-control" })
+                        </div>
+                
+                     <div class="form-group">
+                         <a href="/Admin/DanhMuc" class="btn btn-danger" >Quay Lại</a>
+                         <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      
+                    </div>
+                    }
+                </div>
+            </div>
+                        <!-- /.card-body -->
+    </section>
+                    <!-- /.card -->
+              
+        <!-- /.card-footer-->
+    <!-- /.card -->
+<!-- /.content -->

@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CHXMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CaiDats">
+    <Key>
+      <PropertyRef Name="settingkey" />
+    </Key>
+    <Property Name="settingkey" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="settingvalue" Type="nvarchar(max)" />
+    <Property Name="settingmota" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ChiTietDonHangs">
+    <Key>
+      <PropertyRef Name="Idchitiet" />
+      <PropertyRef Name="Maxe" />
+    </Key>
+    <Property Name="Idchitiet" Type="bigint" Nullable="false" />
+    <Property Name="Maxe" Type="bigint" Nullable="false" />
+    <Property Name="Gia" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="DonHang_Id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Dangkies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhMucs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tieude" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="mota" Type="nvarchar" MaxLength="150" />
+    <Property Name="position" Type="int" Nullable="false" />
+    <Property Name="seotieude" Type="nvarchar(max)" />
+    <Property Name="seomota" Type="nvarchar(max)" />
+    <Property Name="seotukhoa" Type="nvarchar(max)" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+    <Property Name="alias" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhMucSanPhams">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tieude" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+    <Property Name="alias" Type="nvarchar" MaxLength="150" />
+    <Property Name="seotieude" Type="nvarchar(max)" />
+    <Property Name="seomota" Type="nvarchar(max)" />
+    <Property Name="seotukhoa" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="DonHangs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="code" Type="nvarchar(max)" />
+    <Property Name="tenkhachhang" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="diachi" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="TongTien" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="soluong" Type="int" Nullable="false" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ImageXes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idsanpham" Type="bigint" Nullable="false" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="isdefault" Type="bit" Nullable="false" />
+    <Property Name="Xemay_Maxe" Type="bigint" />
+  </EntityType>
+  <EntityType Name="LienHes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="website" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="message" Type="nvarchar(max)" />
+    <Property Name="isread" Type="bit" Nullable="false" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+    <Property Name="DanhMuc_Id" Type="bigint" />
+  </EntityType>
+  <EntityType Name="NhanHieux">
+    <Key>
+      <PropertyRef Name="manhanhieu" />
+    </Key>
+    <Property Name="manhanhieu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tennhanhieu" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tieude" Type="nvarchar(max)" />
+    <Property Name="Iddanhmuc" Type="bigint" Nullable="false" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="chitiet" Type="nvarchar(max)" />
+    <Property Name="image" Type="nvarchar" MaxLength="250" />
+    <Property Name="seotieude" Type="nvarchar(max)" />
+    <Property Name="seomota" Type="nvarchar(max)" />
+    <Property Name="seotukhoa" Type="nvarchar(max)" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+    <Property Name="DanhMuc_Id" Type="bigint" />
+    <Property Name="alias" Type="nvarchar" MaxLength="150" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuangCaos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tieude" Type="nvarchar(max)" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="type" Type="int" Nullable="false" />
+    <Property Name="link" Type="nvarchar(max)" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TinTucs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tieude" Type="nvarchar(max)" />
+    <Property Name="Iddanhmuc" Type="bigint" Nullable="false" />
+    <Property Name="mota" Type="nvarchar(max)" />
+    <Property Name="chitiet" Type="nvarchar(max)" />
+    <Property Name="image" Type="nvarchar(max)" />
+    <Property Name="seotieude" Type="nvarchar(max)" />
+    <Property Name="seomota" Type="nvarchar(max)" />
+    <Property Name="seotukhoa" Type="nvarchar(max)" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar(max)" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar(max)" />
+    <Property Name="DanhMuc_Id" Type="bigint" />
+    <Property Name="alias" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="XeMays">
+    <Key>
+      <PropertyRef Name="Maxe" />
+    </Key>
+    <Property Name="Maxe" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tenxe" Type="nvarchar" MaxLength="150" />
+    <Property Name="Giaxe" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Giasale" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="mota" Type="nvarchar" MaxLength="150" />
+    <Property Name="chitiet" Type="nvarchar(max)" />
+    <Property Name="anh" Type="nvarchar" MaxLength="250" />
+    <Property Name="soluong" Type="nvarchar(max)" />
+    <Property Name="Iddanhmuc" Type="bigint" Nullable="false" />
+    <Property Name="maxuatxu" Type="bigint" Nullable="false" />
+    <Property Name="manhanhieu" Type="bigint" Nullable="false" />
+    <Property Name="ngaytao" Type="datetime" Nullable="false" />
+    <Property Name="nguoitao" Type="nvarchar" MaxLength="150" />
+    <Property Name="ngaysua" Type="datetime" Nullable="false" />
+    <Property Name="nguoisua" Type="nvarchar" MaxLength="150" />
+    <Property Name="DanhMucSanPham_Id" Type="bigint" />
+    <Property Name="alias" Type="nvarchar" MaxLength="250" />
+    <Property Name="IsHome" Type="bit" Nullable="false" />
+    <Property Name="IsSale" Type="bit" Nullable="false" />
+    <Property Name="IsFeature" Type="bit" Nullable="false" />
+    <Property Name="IsHot" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="seotieude" Type="nvarchar" MaxLength="250" />
+    <Property Name="seomota" Type="nvarchar" MaxLength="250" />
+    <Property Name="seotukhoa" Type="nvarchar" MaxLength="250" />
+    <Property Name="Codesanpham" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="XuatXus">
+    <Key>
+      <PropertyRef Name="maxuatxu" />
+    </Key>
+    <Property Name="maxuatxu" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tenxuatxu" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_ChiTietDonHangs_dbo_DonHangs_DonHang_Id">
+    <End Role="DonHangs" Type="Self.DonHangs" Multiplicity="0..1" />
+    <End Role="ChiTietDonHangs" Type="Self.ChiTietDonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonHangs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangs">
+        <PropertyRef Name="DonHang_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietDonHangs_dbo_XeMays_Maxe">
+    <End Role="XeMays" Type="Self.XeMays" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietDonHangs" Type="Self.ChiTietDonHangs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XeMays">
+        <PropertyRef Name="Maxe" />
+      </Principal>
+      <Dependent Role="ChiTietDonHangs">
+        <PropertyRef Name="Maxe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ImageXes_dbo_XeMays_Xemay_Maxe">
+    <End Role="XeMays" Type="Self.XeMays" Multiplicity="0..1" />
+    <End Role="ImageXes" Type="Self.ImageXes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XeMays">
+        <PropertyRef Name="Maxe" />
+      </Principal>
+      <Dependent Role="ImageXes">
+        <PropertyRef Name="Xemay_Maxe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_LienHes_dbo_DanhMucs_DanhMuc_Id">
+    <End Role="DanhMucs" Type="Self.DanhMucs" Multiplicity="0..1" />
+    <End Role="LienHes" Type="Self.LienHes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LienHes">
+        <PropertyRef Name="DanhMuc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Posts_dbo_DanhMucs_DanhMuc_Id">
+    <End Role="DanhMucs" Type="Self.DanhMucs" Multiplicity="0..1" />
+    <End Role="Posts" Type="Self.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Posts">
+        <PropertyRef Name="DanhMuc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_TinTucs_dbo_DanhMucs_DanhMuc_Id">
+    <End Role="DanhMucs" Type="Self.DanhMucs" Multiplicity="0..1" />
+    <End Role="TinTucs" Type="Self.TinTucs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TinTucs">
+        <PropertyRef Name="DanhMuc_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_XeMays_dbo_DanhMucSanPhams_DanhMucSanPham_Id">
+    <End Role="DanhMucSanPhams" Type="Self.DanhMucSanPhams" Multiplicity="0..1" />
+    <End Role="XeMays" Type="Self.XeMays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMucSanPhams">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="XeMays">
+        <PropertyRef Name="DanhMucSanPham_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_XeMays_dbo_NhanHieux_manhanhieu">
+    <End Role="NhanHieux" Type="Self.NhanHieux" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="XeMays" Type="Self.XeMays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanHieux">
+        <PropertyRef Name="manhanhieu" />
+      </Principal>
+      <Dependent Role="XeMays">
+        <PropertyRef Name="manhanhieu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_XeMays_dbo_XuatXus_maxuatxu">
+    <End Role="XuatXus" Type="Self.XuatXus" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="XeMays" Type="Self.XeMays" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XuatXus">
+        <PropertyRef Name="maxuatxu" />
+      </Principal>
+      <Dependent Role="XeMays">
+        <PropertyRef Name="maxuatxu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CHXMDBModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CaiDats" EntityType="Self.CaiDats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietDonHangs" EntityType="Self.ChiTietDonHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dangkies" EntityType="Self.Dangkies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMucs" EntityType="Self.DanhMucs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMucSanPhams" EntityType="Self.DanhMucSanPhams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonHangs" EntityType="Self.DonHangs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ImageXes" EntityType="Self.ImageXes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LienHes" EntityType="Self.LienHes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NhanHieux" EntityType="Self.NhanHieux" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuangCaos" EntityType="Self.QuangCaos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TinTucs" EntityType="Self.TinTucs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XeMays" EntityType="Self.XeMays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XuatXus" EntityType="Self.XuatXus" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ChiTietDonHangs_dbo_DonHangs_DonHang_Id" Association="Self.FK_dbo_ChiTietDonHangs_dbo_DonHangs_DonHang_Id">
+      <End Role="DonHangs" EntitySet="DonHangs" />
+      <End Role="ChiTietDonHangs" EntitySet="ChiTietDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietDonHangs_dbo_XeMays_Maxe" Association="Self.FK_dbo_ChiTietDonHangs_dbo_XeMays_Maxe">
+      <End Role="XeMays" EntitySet="XeMays" />
+      <End Role="ChiTietDonHangs" EntitySet="ChiTietDonHangs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ImageXes_dbo_XeMays_Xemay_Maxe" Association="Self.FK_dbo_ImageXes_dbo_XeMays_Xemay_Maxe">
+      <End Role="XeMays" EntitySet="XeMays" />
+      <End Role="ImageXes" EntitySet="ImageXes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_LienHes_dbo_DanhMucs_DanhMuc_Id" Association="Self.FK_dbo_LienHes_dbo_DanhMucs_DanhMuc_Id">
+      <End Role="DanhMucs" EntitySet="DanhMucs" />
+      <End Role="LienHes" EntitySet="LienHes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Posts_dbo_DanhMucs_DanhMuc_Id" Association="Self.FK_dbo_Posts_dbo_DanhMucs_DanhMuc_Id">
+      <End Role="DanhMucs" EntitySet="DanhMucs" />
+      <End Role="Posts" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_TinTucs_dbo_DanhMucs_DanhMuc_Id" Association="Self.FK_dbo_TinTucs_dbo_DanhMucs_DanhMuc_Id">
+      <End Role="DanhMucs" EntitySet="DanhMucs" />
+      <End Role="TinTucs" EntitySet="TinTucs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_XeMays_dbo_DanhMucSanPhams_DanhMucSanPham_Id" Association="Self.FK_dbo_XeMays_dbo_DanhMucSanPhams_DanhMucSanPham_Id">
+      <End Role="DanhMucSanPhams" EntitySet="DanhMucSanPhams" />
+      <End Role="XeMays" EntitySet="XeMays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_XeMays_dbo_NhanHieux_manhanhieu" Association="Self.FK_dbo_XeMays_dbo_NhanHieux_manhanhieu">
+      <End Role="NhanHieux" EntitySet="NhanHieux" />
+      <End Role="XeMays" EntitySet="XeMays" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_XeMays_dbo_XuatXus_maxuatxu" Association="Self.FK_dbo_XeMays_dbo_XuatXus_maxuatxu">
+      <End Role="XuatXus" EntitySet="XuatXus" />
+      <End Role="XeMays" EntitySet="XeMays" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

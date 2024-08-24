@@ -1,0 +1,148 @@
+﻿
+@model CuaHangXeMay_Web.Models.TinTuc
+@{
+    ViewBag.Title = "Cập Nhật Tin Tức ";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutPage1.cshtml";
+}
+
+@section naviheader {
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/Home" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/TinTuc" class="nav-link">Tin Tức</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/admin/TinTuc/Edit" class="nav-link">Cập Nhật</a>
+        </li>
+    </ul>
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Cập Nhật Tin Tức</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="/Admin/TinTuc">TinTuc</a></li>
+                    <li class="breadcrumb-item active">Cập Nhật</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Thông Tin Cập Nhật Tin Tức</h3>
+
+
+        </div>
+        <div class="card-body p-0">
+
+           
+                @if (Model != null)
+{
+    <div class="bs-stepper-content">
+        @using (Html.BeginForm("Edit", "TinTuc", FormMethod.Post, new { }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(x => x.Id)
+            @Html.HiddenFor(x => x.Iddanhmuc)
+               @Html.HiddenFor(x => x.ngaytao)
+
+                                            <!-- your steps content here -->
+            <div id="logins-part" class="content active dstepper-block" role="tabpanel" aria-labelledby="logins-part-trigger">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Tiêu Đề</label>
+                    @Html.TextBoxFor(x => x.Tieude, new { @class = "form-control", @placeholder = "Tiêu đề tin tức " })
+                    @Html.ValidationMessageFor(x => x.Tieude, null, new { @class = "text-danger" })
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">ảnh đại diện</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            @Html.TextBoxFor(x => x.image, new { @id = "txtImage", @class = "form-control" })
+                        </div>
+                        <div class="input-group-append">
+                            <input type="button" value="Tải ảnh" onclick="Browserver('txtImage');" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Mô Tả</label>
+                    @Html.TextAreaFor(x => x.mota, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Chi Tiết</label>
+                    @Html.TextAreaFor(x => x.chitiet, new { @class = "form-control", @id = "txtDetail" })
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Hiển Thị</label>
+                    @Html.CheckBoxFor(x => x.IsActive ,new { @class = "@checked"})
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Seo title</label>
+                    @Html.TextAreaFor(x => x.seotieude, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Seo Mô Tả</label>
+                    @Html.TextAreaFor(x => x.seotukhoa, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Seo KeyWork</label>
+                    @Html.TextAreaFor(x => x.seomota, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <a href="/Admin/TinTuc" class="btn btn-danger">Quay Lại</a>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        }
+    </div>
+
+}
+             
+        </div>
+    </div>
+    <!-- /.card-body -->
+</section>
+<!-- /.card -->
+<!-- /.card-footer-->
+<!-- /.card -->
+<!-- /.content -->
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+        function Browserver(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileUrl) {
+                addImageProduct(fileUrl);
+            };
+            finder.popup();
+        }
+
+
+
+    </script>
+}
+

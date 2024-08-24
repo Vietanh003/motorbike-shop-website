@@ -1,0 +1,69 @@
+﻿
+
+@model List<CH_XEMAYMVC.Models.ShoppingCartItem>
+@{
+    ViewBag.Title = "Giỏ Hàng";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+<head>
+   <title>Giỏ Hàng</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Colo Shop Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/styles/bootstrap4/bootstrap.min.css">
+    <link href="~/Content/trangchu/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/styles/categories_styles.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/trangchu/styles/categories_responsive.css">
+
+
+</head>
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+
+            <div class="breadcrumbs d-flex flex-row align-items-center">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="/"><i class="fa fa-angle-right" aria-hidden="true"></i>Giỏ hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar -->
+            <!-- Main Content -->
+
+            <div class="row">
+                <div class="col-md-12" id="load_data">
+                    @Html.Action("Partial_Item_Cart", "ShoppingCart")
+                </div>
+                <div class="col-md-12">
+                    @if (ViewBag.CheckCart != null)
+                    {
+                        <div class="text-right">
+                            <a href="#" class="btn btn-danger btnDeleteAll">Xóa</a>
+                            <a href="/thanh-toan" class="btn btn-success">Thanh toán</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+  
+    <script src="~/content/trangchu/js/categories_custom.js"></script>
+    
+}
+
+
+
+
+

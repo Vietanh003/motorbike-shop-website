@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f3f9a52f32f4409f8b5503cf1538477d" Name="Diagram1">
+        <EntityTypeShape EntityType="CHXMDBModel.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.CaiDat" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.Dangky" Width="1.5" PointX="12.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.DanhMuc" Width="1.5" PointX="7.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.DanhMucSanPham" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.DonHang" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.ImageX" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.LienHe" Width="1.5" PointX="10" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.NhanHieu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.Post" Width="1.5" PointX="10" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.QuangCao" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.TinTuc" Width="1.5" PointX="10" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.XeMay" Width="1.5" PointX="3" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CHXMDBModel.XuatXu" Width="1.5" PointX="0.75" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_ChiTietDonHangs_dbo_DonHangs_DonHang_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_ChiTietDonHangs_dbo_XeMays_Maxe" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_LienHes_dbo_DanhMucs_DanhMuc_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_Posts_dbo_DanhMucs_DanhMuc_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_TinTucs_dbo_DanhMucs_DanhMuc_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_XeMays_dbo_DanhMucSanPhams_DanhMucSanPham_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_ImageXes_dbo_XeMays_Xemay_Maxe" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_XeMays_dbo_NhanHieux_manhanhieu" ManuallyRouted="false" />
+        <AssociationConnector Association="CHXMDBModel.FK_dbo_XeMays_dbo_XuatXus_maxuatxu" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,91 @@
+﻿@model CuaHangXeMay_Web.Models.TaiKhoan
+ @{
+     ViewBag.Title = "Đăng Ký";
+ }
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng Ký</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/client/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/Content/client/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/client/dist/css/adminlte.min.css">
+</head>
+<body class="login-page" style="min-height: 463.333px;">
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <a href="#" class="h1"><b>Admin</b></a>
+            </div>
+            <div class="card-body">
+                <p class="login-box-msg">Đăng Ký Thông Tin</p>
+                @using (Html.BeginForm())
+                { 
+                    @Html.AntiForgeryToken()
+                <form class="user" method="post">
+                    @Html.ValidationSummary(true, "", new { @class="text-danger"})
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">UserName</label>
+                        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "Username" })
+                        @Html.ValidationMessageFor(x => x.UserName, null, new { @class = "text-danger" })
+                        </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Mật Khẩu</label>
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control", @placeholder = "pass" })
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Họ Và Tên</label>
+                        @Html.TextBoxFor(x => x.HoVaTen, new { @class = "form-control", @placeholder = "name" })
+                        @Html.ValidationMessageFor(x => x.HoVaTen, null, new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Số Điện Thoại</label>
+                        @Html.TextBoxFor(x => x.sodienthoai, new { @class = "form-control", @placeholder = "phone" })
+                        @Html.ValidationMessageFor(x => x.sodienthoai, null, new { @class = "text-danger" })
+                    </div>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="icheck-primary">
+                                    <input type="checkbox" id="remember">
+                                    <label for="remember">
+                                        Remember Me
+                                    </label>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary btn-block">Đăng Ký</button>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+</form>
+                }
+
+                <!-- /.social-auth-links -->
+                <p class="mb-1">
+                    <a href="#">I forgot my password</a>
+                </p>
+                <p class="mb-0">
+                    <a href="~/Admin/User/Login" class="text-center">Đăng Nhập </a>
+                </p>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.login-box -->
+    <!-- jQuery -->
+    <script src="~/Content/client/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Content/client/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Content/client/dist/js/adminlte.min.js"></script>
+
+</body>
